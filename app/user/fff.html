@@ -1,0 +1,15 @@
+
+<html>
+<head>
+    <title>css实现的图片水印效果</title>
+    <style type=text/css>
+        .transp-block{background:#fff url(1111.jpg) no-repeat center; margin:0px auto;width:128px;height:129px;overflow:hidden}
+        img.transparent{filter:alpha(opacity=70);moz-opacity:.1;opacity:.1;}
+    </style>
+</head>
+<body>
+<div class=transp-block>
+    <img class=transparent src="timg1.jpg" width="512" height="380" />
+</div>
+</body>
+</html>

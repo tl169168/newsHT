@@ -1,0 +1,14 @@
+<include file="public@head">
+	<div class="banner_ny"><img src="__img__/upload/{$hdp.image}" alt=""></div>
+	
+	<div class="content clearfix">
+		<div class="con_r">
+			<div class="dqwz">当前位置 > <a href="#">首页</a> > 公司概况</div>
+			<h2>公司简介</h2>
+			<div class="about">
+				{$post.post_content|html_entity_decode}
+			</div>
+		</div>
+		<include file="public@left">
+	</div>
+	<include file="public@foot">

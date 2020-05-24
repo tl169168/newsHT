@@ -1,0 +1,34 @@
+<include file="public@head">
+	<div class="banner_ny"><img src="__img__/upload/{$hdp.image}" alt=""></div>
+	<div class="content clearfix">
+		<div class="con_r">
+		<div class="dqwz">当前位置 > <a href="{$index}">首页</a> > {$fenlei1.name}</div>
+		<h2> {$fenlei1.name}</h2>
+		<div class="product">
+			<ul class="clearfix">
+
+				<volist name="news" id="vo">
+
+				<li><div class="pic"><a href="{$vo.url}" target="_blank"><img src="__img__/upload/{$vo.thumbnail}" alt=""></a></div><p>{$vo.title}</p></li>
+
+				</volist>
+
+			</ul>
+		</div>
+			<div align="center" class="dzcpage">
+				<ul class="pagination">{$page|default=''}</ul>
+			</div>
+		</div>
+		<div class="subnav">
+			<ul class="clearfix">
+
+				<volist name="fenlei" id="vo">
+
+				<li><a href="{$vo.url}"{$vo.id == $id ? 'class="current"':''}>{$vo.name}</a></li>
+
+				</volist>
+
+			</ul>
+		</div>
+	</div>
+	<include file="public@foot">

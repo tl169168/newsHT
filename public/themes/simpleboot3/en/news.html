@@ -1,0 +1,23 @@
+<include file="public@header">
+	<div class="banner_ny"><img src="__img__/upload/{$hdp.imagee}" alt=""></div>
+	<div class="content">
+		<div class="news">
+			<h3>News</h3>
+			<ul class="clearfix">
+				<volist name="gsxw" id="vo">
+				<li class="clearfix">
+					<div class="pic"><a href="{$vo.url}"><img src="__img__/upload/{$vo.thumbnail}" alt=""></a></div>
+					<div class="li_r">
+						<div class="bt"><a href="{$vo.url}">{$vo.post_titlem}</a></div>
+						<p>{$vo.post_excerptm}</p>
+						<div class="more">{$vo.create_time|date="Y-m-d",###}</div>
+					</div>
+				</li>
+				</volist>
+			</ul>
+		</div>
+		<div align="center" class="dzcpage">
+			<ul class="pagination">{$page|default=''}</ul>
+		</div>
+	</div>
+	<include file="public@footer">

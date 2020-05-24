@@ -1,0 +1,50 @@
+<include file="public@head">
+	<div class="banner_ny"><img src="__img__/upload/{$hdp.image}" alt=""></div>
+	<div class="content">
+		<div class="news_con">
+			<div class="title">
+        		<h1>{$gsxw.post_title}</h1>
+                <p><span>作者：格瑞谱</span><span>来源：<a href="{$gsxw.post_source}">{$gsxw.post_source}</a></span><span>时间：{$gsxw.create_time|date="Y-m-d",###}</span><span>浏览：{$gsxw.post_hits}次</span></p>
+            </div>
+            <notempty name="gsxw.more.video">
+			<iframe height=500px width=100% src='{:cmf_get_file_download_url($gsxw.more.video)}' frameborder=0 'allowfullscreen'>
+            </iframe>
+			</notempty>
+			<div class="news_con_con clearfix">
+			{$gsxw.post_content|html_entity_decode}
+			</div>
+            <div class="fenye">
+            	<ul>
+                	<li><a href="{$gsxwt.url}">上一条：{$gsxwt.post_title}</a></li>
+                    <li><a href="{$gsxwn.url}">下一条：{$gsxwn.post_title}</a></li>
+                </ul>
+            </div>
+		</div>
+	</div>
+<include file="public@foot">
+	<script>
+		var id={$id};
+
+		window.onbeforeunload=function (){
+			alert("===onbeforeunload===");
+			if(event.clientX>document.body.clientWidth && event.clientY < 0 || event.altKey){
+				$.ajax({
+					type:"post",
+					data:{id:id},
+					url:"{:url('pages')}",
+					success:function (data) {
+						console.log(data);
+					}
+				})
+			}else{
+				$.ajax({
+					type:"post",
+					data:{id:id},
+					url:"{:url('pages')}",
+					success:function (data) {
+						console.log(data);
+					}
+				})
+			}
+		}
+	</script>

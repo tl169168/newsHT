@@ -1,0 +1,85 @@
+<include file="public@header">
+	<div class="banner_pc">
+		<div class="flexslider">
+		    <ul class="slides">
+				<volist name="hdp" id="vo">
+		        <li><img src="__img__/upload/{$vo.imagee}" /></li>
+				</volist>
+		    </ul>
+		</div>
+	</div>
+	<div class="banner_yd">
+		<div class="flexslider">
+		    <ul class="slides">
+				<volist name="hdp" id="vo">
+					<li><img src="__img__/upload/{$vo.imagese}" /></li>
+				</volist>
+		    </ul>
+		</div>
+	</div>
+	<script type="text/javascript">
+			jQuery(document).ready(function() {
+			  if(jQuery('.flexslider').length){
+				  jQuery('.flexslider').flexslider({
+					animation: "slide",
+					start: function(slider){
+					  jQuery('body').removeClass('loading');
+					}
+				  });
+			  }
+			  //$("img.lazy").lazyload();
+			  /*if($.getUrlParam('t') != 'app' && $.cookie('show')!="0"){
+				$.cookie('show', '1');
+				$("#download").show();
+			  }else{
+				$.cookie('show', '0');
+				$("#download").hide();
+			  }*/
+			});
+	</script>
+	<div class="content">
+		<div class="dyip">
+			<ul class="clearfix">
+				<li>
+					<div class="bt F18">{$post.post_titlem}</div>
+					<div class="pic"><a href="http://www.sz-grape.com/abouts/85.html"><img src="__img__/upload/{$post.thumbnail}" alt=""></a></div>
+					<p>{$post.post_keywordsm}</p>
+				</li>
+				<li>
+					<div class="bt F18">Three Overseas Groups</div>
+					<div class="pic"><a href="http://www.sz-grape.com/jdcgs/87.html"><img src="__TMPL__/public/assets/images/pic3.jpg" alt=""></a></div>
+					<p>China's strategic partners of the three international wine groups</p>
+				</li>
+				<li>
+					<div class="bt F18">{$gsxw4.post_titlem|mb_substr=0,25,'utf-8'}</div>
+					<div class="pic"><a href="{$gsxw4.url}"><img src="__img__/upload/{$gsxw4.thumbnail}" alt=""></a></div>
+					<p>{$gsxw4.post_keywordsm}</p>
+				</li>
+				<li>
+					<div class="bt F18">our client</div>
+					<div class="pic"><a href="http://www.sz-grape.com/abouts/85/id/272.html"><img src="__TMPL__/public/assets/images/pic5.jpg" alt=""></a></div>
+					<p>Reseller customers in more than 200 cities across the country</p>
+				</li>
+			</ul>
+		</div>
+		<div class="derp clearfix">
+			<div class="video">
+				<div class="bt F18 Fb">Video Zone</div>
+				<ul class="clearfix">
+					<volist name="gsxwr" id="vo" length="2">
+					<li><a href="{$vo.url}"><img src="__img__/upload/{$vo.thumbnail}" alt="{$vo.post_titlem}"></a></li>
+					</volist>
+
+				</ul>
+			</div>
+			<div class="video">
+				<div class="bt F18 Fb">company Album</div>
+				<ul class="clearfix">
+					<volist name="gsxwwo" id="vo" length="2">
+					<li><a href="{$vo.url}"><img src="__img__/upload/{$vo.thumbnail}" alt=""></a><p>{$vo.post_titlem}</p></li>
+					</volist>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<include file="public@footer">

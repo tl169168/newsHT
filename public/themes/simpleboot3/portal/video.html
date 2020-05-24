@@ -1,0 +1,19 @@
+<include file="public@head">
+	<div class="banner_ny"><img src="__img__/upload/{$hdp.image}" alt=""></div>
+	
+	<div class="content clearfix">
+		<div class="con_r">
+		<div class="xiangce">
+			<ul class="clearfix">
+				<volist name="news" id="vo">
+				<li><a href="{$vo.url}"><img src="__img__/upload/{$vo.thumbnail}" alt=""></a><p>{$vo.post_title}</p></li>
+				</volist>
+			</ul>
+		</div>
+			<div align="center" class="dzcpage">
+				<ul class="pagination">{$page|default=''}</ul>
+			</div>
+		</div>
+		<include file="public@left">
+	</div>
+	<include file="public@foot">

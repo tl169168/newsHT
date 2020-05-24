@@ -1,0 +1,68 @@
+<include file="public@header">
+	<div class="banner_ny"><img src="__img__/upload/{$hdp.imagee}" alt=""></div>
+	<div class="content clearfix">
+		<div class="subnav">
+			<ul class="clearfix">
+				<li><a href="{$contact}">contact details</a></li>
+				<li><a href="{$zxly}" class="current">Leave message</a></li>
+			</ul>
+		</div>
+		<div class="content">
+			<form action="{:url('add')}"  class="js-ajax-form"  method="post">
+			<div class="zxly">
+
+				<ul class="clearfix">
+					<li class="left"><input type="text" name="add" class="input_txt" placeholder="theme" /></li>
+					<li class="right"><input type="text" name="name" class="input_txt" placeholder="name" /></li>
+					<li class="left"><input type="text" name="tel" class="input_txt" placeholder="tel" /></li>
+					<li class="right"><input type="text" name="em" class="input_txt" placeholder="mailbox" /></li>
+					<li class="textarea"><textarea name="con" placeholder="content"></textarea></li>
+				</ul>
+
+				<div class="more">
+					<button id="div" class="input_btn js-ajax-submit"  type="submit"
+										   data-loadingmsg="{:lang('LOADING')}">
+						Submit
+					</button>
+					<input type="button" value="Reset" class="input_btn2" /></div>
+
+			</div>
+			</form>
+		</div>
+	</div>
+	<include file="public@footer">
+			<script type="text/javascript">
+				//全局变量
+				var GV = {
+					ROOT: "__ROOT__/",
+					WEB_ROOT: "__WEB_ROOT__/",
+					JS_ROOT: "static/js/",
+					APP: ''/*当前应用名*/
+				};
+			</script>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<![endif]-->
+
+			<link href="__STATIC__/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+			<!--[if lt IE 9]>
+            <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+            <![endif]-->
+			<script>
+				if (window.parent !== window.self) {
+					document.write              = '';
+					window.parent.location.href = window.self.location.href;
+					setTimeout(function () {
+						document.body.innerHTML = '';
+					}, 0);
+				}
+			</script>
+			<script src="__TMPL__/public/assetss/js/jquery-1.10.2.min.js"></script>
+			<script src="__STATIC__/js/wind.js"></script>
+			<script src="__STATIC__/js/admin.js"></script>
+
+			<script>
+				(function () {
+					document.getElementById('input_username').focus();
+				})();
+			</script>

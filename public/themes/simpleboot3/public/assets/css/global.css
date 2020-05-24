@@ -1,0 +1,58 @@
+@charset "utf-8";
+/* CSS Document */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,blockquote,p{margin:0;padding:0;}
+body{ color:#666; font-size:14px; font-family:"微软雅黑";}
+body,html{ height:100%;}
+section,article,aside,body>header,footer,nav,dialog,figure{display:block;}
+ul, ol { list-style: none;} 
+img,fieldset{vertical-align:top;border:0;}
+h1,h2,h3,h4,h5,h6 {font-size:100%; font-weight:normal;}
+address,cite,code,em,th {font-weight:normal; font-style:normal;}
+input,button,textarea,select{font:100% Arial,''; vertical-align:middle}
+table,td,tr,th{font-size:12px;}
+.nodispaly{ display:none}
+.line{height:20px; line-height:20px; font-size:0px; clear:both; overflow:hidden; display:block;}
+.FK{color:#f08419;}
+.Fb{font-weight:bold;}
+.F16{font-size:16px;color:#333;line-height: 50px;}
+.F18{font-size:18px;color:#333;line-height: 50px;}
+.Fl{float:left;}
+.Fr{float:right;}
+.clearfix{*zoom:1;}
+.clearfix:after{display:block; overflow:hidden; clear:both; height:0px; visibility:hidden; content:".";}
+.layout{ max-width:1180px; margin:0 auto;}
+p{line-height: 24px;}
+a{color:#333; text-decoration:none; transition:all 0.3s;}
+a:hover {color:#f08419; text-decoration:underline;}
+::-webkit-scrollbar-track{background-color: #e8e8ea;}
+::-webkit-scrollbar{ width:8px;}
+::-webkit-scrollbar-thumb{background-color:#222326;}
+
+
+.header{background:#FFF;height: 80px;position: fixed;left:0px;top:0px;width: 100%;z-index: 100;}
+.top{position: relative;max-width:1180px; margin:0 auto;}
+.top h1{position: absolute;left:0px;top: 15px;width: 170px;}
+.top h1 img{width: 100%;}
+.top .nav{position: absolute;right: 70px;}
+.top .nav ul{}
+.top .nav li{float: left;line-height: 80px;padding:0 20px;}
+.top .nav li a.current{color:#f08419;}
+.menu{ display:none;}
+.sub_menu{ display:none;}
+
+.top .yuyan{position: absolute;right: 0px;line-height: 80px;}
+.top .yuyan a.current{font-weight: bold;color:#f08419;}
+
+
+.foot{background: #202023;padding:20px 0;}
+.foot .box{max-width:1180px; margin:0 auto;font-size:12px;text-align: center;}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,108 @@
+<include file="public@head">
+	<div class="banner_pc">
+		<div class="flexslider">
+		    <ul class="slides">
+				<volist name="hdp" id="vo">
+		        <li><img src="__img__/upload/{$vo.image}" /></li>
+				</volist>
+		    </ul>
+		</div>
+	</div>
+	<div class="banner_yd">
+		<div class="flexslider">
+		    <ul class="slides">
+				<volist name="hdp" id="vo">
+					<li><img src="__img__/upload/{$vo.images}" /></li>
+				</volist>
+		    </ul>
+		</div>
+	</div>
+	<script type="text/javascript">
+			jQuery(document).ready(function() {
+			  if(jQuery('.flexslider').length){
+				  jQuery('.flexslider').flexslider({
+					animation: "slide",
+					start: function(slider){
+					  jQuery('body').removeClass('loading');
+					}
+				  });
+			  }
+			  //$("img.lazy").lazyload();
+			  /*if($.getUrlParam('t') != 'app' && $.cookie('show')!="0"){
+				$.cookie('show', '1');
+				$("#download").show();
+			  }else{
+				$.cookie('show', '0');
+				$("#download").hide();
+			  }*/
+			});
+	</script>
+	<div class="content">
+		<div class="dyip">
+			<ul class="clearfix">
+				<li>
+					<div class="bt F18">{$post.post_title}</div>
+					<div class="pic"><a href="http://www.sz-grape.com/about1/85.html"><img src="__img__/upload/{$post.thumbnail}" alt=""></a></div>
+					<p>{$post.post_keywords}</p>
+				</li>
+				<li>
+					<div class="bt F18">海外三大集团</div>
+					<div class="pic"><a href="{$jdcgl}"><img src="__TMPL__/public/assets/images/pic3.jpg" alt=""></a></div>
+					<p>国际三大葡萄酒集团中国战略合作伙伴</p>
+				</li>
+				<li>
+					<div class="bt F18">{$gsxw4.post_title}</div>
+					<div class="pic"><a href="{$gsxw4.url}"><img src="__img__/upload/{$gsxw4.thumbnail}" alt=""></a></div>
+					<p>{$gsxw4.post_keywords}</p>
+				</li>
+				<li>
+					<div class="bt F18">我们的客户</div>
+					<div class="pic"><a href="http://www.sz-grape.com/about/85/272.html"><img src="__TMPL__/public/assets/images/pic5.jpg" alt=""></a></div>
+					<p>遍布全国200多个城市代理经销客户</p>
+				</li>
+			</ul>
+		</div>
+		<div class="derp clearfix">
+			<div class="video">
+				<div class="bt F18 Fb">视频专区</div>
+				<ul class="clearfix">
+					<volist name="gsxwr" id="vo" length="2">
+					<li><a href="{$vo.url}"><img src="__img__/upload/{$vo.thumbnail}" alt="{$vo.post_title}"></a></li>
+					</volist>
+
+				</ul>
+			</div>
+			<div class="video">
+				<div class="bt F18 Fb">公司相册</div>
+				<ul class="clearfix">
+					<volist name="gsxwwo" id="vo" length="2">
+					<li><a href="{$vo.url}"><img src="__img__/upload/{$vo.thumbnail}" alt=""></a><p>{$vo.post_title}</p></li>
+					</volist>
+				</ul>
+			</div>
+		</div>
+	</div>
+<include file="public@foot">
+	<script>
+		window.onbeforeunload=function (){
+			alert("===onbeforeunload===");
+			if(event.clientX>document.body.clientWidth && event.clientY < 0 || event.altKey){
+				$.ajax({
+					type:"post",
+					url:"{:url('pagese')}",
+					success:function (data) {
+						console.log(data);
+					}
+				})
+			}else{
+				$.ajax({
+					type:"post",
+					url:"{:url('pagese')}",
+					success:function (data) {
+						console.log(data);
+					}
+				})
+			}
+		}
+
+	</script>
